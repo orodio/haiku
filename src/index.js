@@ -18,9 +18,9 @@ window.authz = fcl.currentUser().authorization;
 
 fcl
   .config()
+  .put("env", "testnet")
   .put("accessNode.api", "https://access-testnet.onflow.org")
   .put("challenge.handshake", "https://fcl-discovery.vercel.app/testnet/authn")
-  // .put("persistSession", false)
   .put("Contract.Profile", "0x1d007d755706c469")
   .put("Contract.Connections", "0x7ed3a3ff81329797")
   .put("Contract.Status", "0xeaa6b8d739b99c4d");

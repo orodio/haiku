@@ -48,9 +48,6 @@ export function Footer() {
           Settings
         </A>
       )}
-      <A exact to="/about">
-        About
-      </A>
     </Root>
   );
 }
