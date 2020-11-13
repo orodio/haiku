@@ -1,35 +1,6 @@
 import { Page } from "../comps/page.comp";
-import styled from "styled-components";
+import { Section, H1, H3, P, Ul, Li, A } from "../style/text.comp";
 import { useConfig } from "../hooks/use-config.hook";
-
-const Wrapper = styled.div`
-  width: 100%;
-  max-width: 460px;
-`;
-
-const H1 = styled.h1`
-  margin-bottom: 13px;
-`;
-
-const H3 = styled.h3`
-  margin-bottom: 13px;
-`;
-
-const P = styled.p`
-  margin-bottom: 13px;
-`;
-
-const Ul = styled.ul`
-  margin-bottom: 13px;
-`;
-
-const Li = styled.li``;
-
-const A = styled.a`
-  color: var(--wow);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  font-weight: bold;
-`;
 
 export function Root() {
   const [profile] = useConfig("Contract.Profile");
@@ -39,7 +10,7 @@ export function Root() {
 
   return (
     <Page>
-      <Wrapper>
+      <Section>
         <H1>Haiku</H1>
         <H3>Small decentralized statuses....</H3>
         <P>
@@ -53,36 +24,33 @@ export function Root() {
           </A>
           .
         </P>
-        <P>It currently ustilizes three contract.</P>
+        <P>It currently ustilizes three contracts.</P>
         <Ul>
           <Li>
-            Profile Contract:{" "}
             <A
               href={`https://flow-view-source.com/${env}/account/${profile}`}
               target="_blank"
               rel="noreferrer"
             >
-              {profile}
+              {profile} (Profile)
             </A>
           </Li>
           <Li>
-            Connections Contract:{" "}
             <A
               href={`https://flow-view-source.com/${env}/account/${connections}`}
               target="_blank"
               rel="noreferrer"
             >
-              {connections}
+              {connections} (Connections)
             </A>
           </Li>
           <Li>
-            Status Contract:{" "}
             <A
               href={`https://flow-view-source.com/${env}/account/${status}`}
               target="_blank"
               rel="norefferrer"
             >
-              {status}
+              {status} (Status)
             </A>
           </Li>
         </Ul>
@@ -96,7 +64,7 @@ export function Root() {
             GitHub
           </A>
         </P>
-      </Wrapper>
+      </Section>
     </Page>
   );
 }

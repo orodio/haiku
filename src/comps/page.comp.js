@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { Helmet } from "react-helmet";
 import { Footer } from "./footer.comp";
 import { Header } from "./header.comp";
+import { Initialize } from "./initialize.comp";
 
 const Root = styled.div`
   border: 8px solid var(--fg);
@@ -22,7 +23,10 @@ export function Page({ children, title }) {
       <Helmet>
         <title>{calcTitle(title)}</title>
       </Helmet>
-      <Root>{children}</Root>
+      <Root>
+        <Initialize />
+        {children}
+      </Root>
       <Header />
       <Footer />
     </>
